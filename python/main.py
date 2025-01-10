@@ -1,4 +1,4 @@
 from generate import *
-from display import *
+from animate import *
 
-display(generate())
+display(generate_example())
