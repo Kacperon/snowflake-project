@@ -21,4 +21,4 @@ def rotate60(segments):
     return new_segments
 
 def animate(segments):
-    # :)
+    print(":)")
