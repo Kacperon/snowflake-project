@@ -19,3 +19,6 @@ def rotate60(segments):
         y2 = s.x2 * 3**0.5/2 + s.y2 * 1/2
         new_segments.append(Segment(x1, y1, x2, y2))
     return new_segments
+
+def animate(segments):
+    # :)
