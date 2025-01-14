@@ -10,7 +10,7 @@ def generate():
         element.append(rotate60(element[-1]))
     segments.append(element)
 # elements
-    for i in range(4):
+    for i in range(11):
         element = []
         for s in segments[-1]:
             if s.type != 0:

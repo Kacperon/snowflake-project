@@ -1,4 +1,4 @@
-class Segment():
+class Segment:
     def __init__(self,x1,y1,x2,y2,type=1):
         self.x1 = x1
         self.y1 = y1
