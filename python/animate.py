@@ -1,5 +1,5 @@
+from generate_lib.import_lib import *
 import matplotlib.pyplot as plt
-from Segment import *
 
 def display(segments):
     segments = sum(segments, [])

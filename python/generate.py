@@ -1,5 +1,4 @@
-from Segment import *
-from generate_lib import *
+from generate_lib.import_lib import *
 
 def generate():
     segments = []
