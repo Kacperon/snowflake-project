@@ -1,6 +1,7 @@
 from .Segment import *
 from random import randint
 
+# randomizes weather conditions
 def weather():
     steps = 5
     conditions = []
@@ -10,6 +11,7 @@ def weather():
         conditions.append([temperature, humidity])
     return conditions
 
+# rotates segment by 60 degree relative to (0,0)
 def rotate60(segment):
     s = segment
     x1 = s.x1 * 1/2 - s.y1 * 3**0.5/2

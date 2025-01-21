@@ -1,5 +1,6 @@
 from .Segment import *
 
+# returns collision point x, y of 2 segments and 0, 0 if no collision
 def collision(s1, s2):
     def cross(x1, y1, x2, y2, x3, y3):
         return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
@@ -17,6 +18,7 @@ def collision(s1, s2):
         return x, y
     return 0, 0
 
+# takes all segments and removes collisions
 def merge_coliding(segments):
     for i in range(len(segments)):
         s1 = segments[i]
@@ -27,7 +29,7 @@ def merge_coliding(segments):
             if (x,y) != (0,0):
                 s_colided.append(j)
         if s_colided:
-            d2min = 999
+            d2min = 9999
             closest = 0
             for j in s_colided:
                 s2 = segments[j]

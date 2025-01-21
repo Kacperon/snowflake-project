@@ -2,6 +2,7 @@ from generate_lib.import_lib import *
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+# displays all segments
 def display(segments):
     segments = sum(segments, [])
     plt.figure(facecolor='#111111')
@@ -12,9 +13,9 @@ def display(segments):
     plt.show()
 
 def animate(segments):
-  
+
     # fig, ax = plt.subplots(figsize=(6, 6))
-    
+
     fig = plt.figure(facecolor='#111111')
     ax = plt.gca()
     ax.axis('off')
