@@ -11,7 +11,7 @@ def generate():
         element.append(rotate60(element[-1]))
     segments.append(element)
     # generate elements
-    for i in range(11):
+    for i in range(10):
         element = []
         for s in segments[-1]:
             if s.growing == 1:
@@ -23,7 +23,9 @@ def generate():
                 p2y = s.y2 + vy + 0.5*-vx
                 element.append(Segment(s.x2,s.y2,p1x,p1y))
                 element.append(Segment(s.x2,s.y2,p2x,p2y))
-        element = merge_coliding(element)
         segments.append(element)
+        segments = merge_colliding(segments)
     # remove temporary
+    # for s in sum(segments, []):
+    #     print(s.x1,s.y1,s.x2,s.y2)
     return segments
