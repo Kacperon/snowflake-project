@@ -2,10 +2,9 @@ from .Segment import *
 from random import randint
 
 # randomizes weather conditions
-def weather():
-    steps = 5
+def weather(layers):
     conditions = []
-    for i in range(steps):
+    for i in range(layers):
         temperature = randint(1, 5)
         humidity = randint(1,5)
         conditions.append([temperature, humidity])
