@@ -1,5 +1,5 @@
 from generate import *
 from animate import *
 
-display(generate(layers=10))
-animate(generate(layers=10))
+display(generate(layers=8))
+#animate(generate(layers=8))

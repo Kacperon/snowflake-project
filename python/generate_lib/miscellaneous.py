@@ -1,20 +1,23 @@
 from .Segment import *
-from random import randint
+from random import randint, seed
+from math import sin, cos, radians
 
 # randomizes weather conditions
 def weather(layers):
     conditions = []
     for i in range(layers):
-        temperature = randint(1, 5)
-        humidity = randint(1,5)
+        temperature = randint(1, 3)
+        humidity = randint(1,3)
         conditions.append([temperature, humidity])
     return conditions
 
-# rotates segment by 60 degree relative to (0,0)
-def rotate60(segment):
-    s = segment
-    x1 = s.x1 * 1/2 - s.y1 * 3**0.5/2
-    y1 = s.x1 * 3**0.5/2 + s.y1 * 1/2
-    x2 = s.x2 * 1/2 - s.y2 * 3**0.5/2
-    y2 = s.x2 * 3**0.5/2 + s.y2 * 1/2
-    return Segment(x1, y1, x2, y2)
+# rotates segment relative to (0,0)
+def rotate(segment,angle):
+    s, a = segment, angle
+    sind = lambda degrees: sin(radians(degrees))
+    cosd = lambda degrees: cos(radians(degrees))
+    x1 = s.x1 * cosd(a) - s.y1 * sind(a)
+    y1 = s.x1 * sind(a) + s.y1 * cosd(a)
+    x2 = s.x2 * cosd(a) - s.y2 * sind(a)
+    y2 = s.x2 * sind(a) + s.y2 * cosd(a)
+    return Segment(x1, y1, x2, y2, s.growing, s.temporary)

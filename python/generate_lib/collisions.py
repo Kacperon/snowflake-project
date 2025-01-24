@@ -4,7 +4,7 @@ from .Segment import *
 def collision(s1, s2):
     def ccw(ax, ay, bx, by, cx, cy, tol=1e-9):
         return (cy - ay) * (bx - ax) - (by - ay) * (cx - ax) > -tol
-    def is_close(ax, ay, bx, by, tol=1e-9):
+    def is_close(ax, ay, bx, by, tol=1e-3):
         return abs(ax - bx) < tol and abs(ay - by) < tol
     if is_close(s1.x1, s1.y1, s2.x1, s2.y1) or is_close(s1.x2, s1.y2, s2.x2, s2.y2) or \
        is_close(s1.x1, s1.y1, s2.x2, s2.y2) or is_close(s1.x2, s1.y2, s2.x1, s2.y1):
@@ -33,7 +33,7 @@ def merge_colliding(segments):
                     Lmin = L
                     Px, Py = x, y
         if Lmin != float('inf'):
-            s1 = Segment(s1.x1, s1.y1, Px, Py, growing=0)
+            s1 = Segment(s1.x1, s1.y1, Px, Py, growing=0, temporary=s1.temporary)
         element.append(s1)
     segments[-1] = element
     return segments
