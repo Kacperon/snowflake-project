@@ -1,5 +1,6 @@
 from generate import *
 from animate import *
 
-display(generate(layers=8))
+while 1:
+    display(generate(layers=8))
 #animate(generate(layers=8))

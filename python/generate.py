@@ -18,7 +18,7 @@ def generate(layers):
         segments = [element for element in segments if element]
     # rotate randomly
         for i in range(len(segments)):
-            seed(sum(sum(conditions[:],[])))
+            seed(int("".join([str(x) for x in sum(conditions,[])])))
             angle = randint(0,360)
             segments[i] = [rotate(segment,angle) for segment in segments[i]]
     return segments
