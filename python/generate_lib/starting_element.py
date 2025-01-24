@@ -27,7 +27,7 @@ def starting_element(conditions):
             rotate30()
     # dwunastokąt
         if temperature==1 and humidity==3:
-            element.append(Segment(0, 0, 0, 2, temporary=1))
+            element.append(Segment(0, 1, 0, 2, temporary=1))
             rotate60()
             element.append(Segment(0, 2, -1, 1.7320508075688774,growing=0))
             rotate30()

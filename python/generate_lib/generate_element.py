@@ -200,7 +200,6 @@ def generate_element(segments, i, conditions):
                         element.append(Segment(s.x2, s.y2, p1x, p1y))
                         element.append(Segment(s.x2, s.y2, p2x, p2y))
                         element.append(Segment(s.x2, s.y2, p3x, p3y))
-                        element.append(s)
                 segments.append(element)
                 segments = merge_colliding(segments)
         # rozwidlenie na 2
@@ -215,7 +214,6 @@ def generate_element(segments, i, conditions):
                         p3y = s.y2 + vy + -vx/3
                         element.append(Segment(s.x2, s.y2, p2x, p2y))
                         element.append(Segment(s.x2, s.y2, p3x, p3y))
-                        element.append(s)
                 segments.append(element)
                 segments = merge_colliding(segments)
         # rozwidlenie na 2 segment
@@ -231,7 +229,6 @@ def generate_element(segments, i, conditions):
                         p3y = s.y2 + vy1 + -vx2
                         element.append(Segment(s.x2, s.y2, p2x, p2y))
                         element.append(Segment(s.x2, s.y2, p3x, p3y))
-                        element.append(s)
                 segments.append(element)
                 segments = merge_colliding(segments)
 
