@@ -7,6 +7,8 @@ from random import randint, seed
 from generate import *
 from animate import *
 
+layers = 8
+
 def main():
     root = tk.Tk()
     root.title("bebok")
@@ -45,7 +47,6 @@ def main():
 
     def handle_generate():
         nonlocal segments
-        layers = simpledialog.askinteger("Input", "Enter number of layers:", minvalue=1, maxvalue=10)
         if layers:
             segments = generate(layers)
             display(segments, ax, canvas)
