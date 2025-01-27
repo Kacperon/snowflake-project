@@ -25,6 +25,7 @@ def main():
     fig, ax = plt.subplots(figsize=(5, 5))
     fig.patch.set_facecolor('#2C2F33')
     ax.set_facecolor('#2C2F33')
+    ax.axis('off')
     canvas = FigureCanvasTkAgg(fig, master=frame)
     canvas_widget = canvas.get_tk_widget()
     canvas_widget.pack(fill=tk.BOTH, expand=True)
@@ -50,13 +51,15 @@ def main():
         if layers:
             segments = generate(layers)
             display(segments, ax, canvas)
+        display_button.config(state=tk.NORMAL)
+
 
     # Psyciski
     button_frame = tk.Frame(root, bg='#2C2F33')
     button_frame.grid(row=1, column=0, sticky="ew")
     button_frame.columnconfigure((0, 1, 2), weight=1)
 
-    display_button = tk.Button(button_frame, text="Display", command=handle_display, bg='#7289DA', fg='white')
+    display_button = tk.Button(button_frame, text="Display", command=handle_display, bg='#7289DA', fg='white', state = 'disabled')
     display_button.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
 
     animate_button = tk.Button(button_frame, text="Animate", command=handle_animate, bg='#7289DA', fg='white')

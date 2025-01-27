@@ -7,7 +7,7 @@ def display(segments, ax, canvas):
     ax.clear()
     ax.set_facecolor('#2C2F33')
     for s in sum(segments, []):
-        ax.plot([s.x1, s.x2], [s.y1, s.y2], linewidth=2, color='#00bfff')
+        ax.plot([s.x1, s.x2], [s.y1, s.y2], linewidth=4, color='#00bfff')
     ax.axis('square')
     ax.axis('off')
     canvas.draw()
@@ -60,7 +60,7 @@ def animate(segments, ax, canvas):
 
     def init():
         for _ in range(len(segments)):
-            line, = ax.plot([], [], lw=2, color='#00bfff')
+            line, = ax.plot([], [], lw=4, color='#00bfff')
             lines.append(line)
         return lines
 
