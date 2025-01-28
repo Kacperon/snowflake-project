@@ -8,10 +8,11 @@ from generate import *
 from animate import *
 
 layers = 8
+t = 8
 
 def main():
     root = tk.Tk()
-    root.title("bebok")
+    root.title("sniezynka")
     root.configure(bg='#2C2F33')
 
     # Skalowanie
@@ -42,7 +43,7 @@ def main():
     def handle_animate():
         nonlocal segments
         if segments:
-            animate(segments, ax, canvas)
+            animate(segments, ax, canvas, 10)
         display_button.config(state=tk.NORMAL)
         
 
@@ -61,13 +62,16 @@ def main():
     button_frame.columnconfigure((0, 1, 2), weight=1)
    
 
-    display_button = tk.Button(button_frame, text="Skip Animation", command=handle_display, bg='#3FA7D6', fg='white', state = 'disabled', font =['Arial', 14])
+    display_button = tk.Button(button_frame, text="Skip", command=handle_display, state = 'disabled', font =['Arial', 14], width=1,
+    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
     display_button.grid(row=0, column=2, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="ew")
 
-    animate_button = tk.Button(button_frame, text="Animate", command=handle_animate, bg='#3FA7D6', fg='white', state = 'disabled', font =['Arial', 14])
+    animate_button = tk.Button(button_frame, text="Animate", command=handle_animate, state = 'disabled', font =['Arial', 14], width=1,
+    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
     animate_button.grid(row=0, column=1, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="ew")
 
-    generate_button = tk.Button(button_frame, text="Generate and Show", command=handle_generate, bg='#3FA7D6', fg='white', font =['Arial', 14])
+    generate_button = tk.Button(button_frame, text="Generate", command=handle_generate, font =['Arial', 14], width=1,
+    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
     generate_button.grid(row=0, column=0, padx=5, pady=5, ipadx = 20, ipady = 10, sticky="ew")
 
     root.mainloop()
