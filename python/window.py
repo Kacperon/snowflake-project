@@ -63,16 +63,16 @@ def main():
    
 
     display_button = tk.Button(button_frame, text="Skip", command=handle_display, state = 'disabled', font =['Arial', 14], width=1,
-    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
-    display_button.grid(row=0, column=2, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="ew")
+    bg = '#5A3D56', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
+    display_button.grid(row=0, column=2, padx=5, pady=10, ipadx = 40, ipady = 20, sticky="nsew")
 
     animate_button = tk.Button(button_frame, text="Animate", command=handle_animate, state = 'disabled', font =['Arial', 14], width=1,
-    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
-    animate_button.grid(row=0, column=1, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="ew")
+    bg = '#2F4F4F', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
+    animate_button.grid(row=0, column=1, padx=5, pady=10, ipadx = 40, ipady = 20, sticky="nsew")
 
     generate_button = tk.Button(button_frame, text="Generate", command=handle_generate, font =['Arial', 14], width=1,
-    bg = '#131A23', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
-    generate_button.grid(row=0, column=0, padx=5, pady=5, ipadx = 20, ipady = 10, sticky="ew")
+    bg = '#4C566A', fg = '#eeeeee', activebackground = '#16202A', activeforeground = '#eeeeee')
+    generate_button.grid(row=0, column=0, padx=5, pady=5, ipadx = 40, ipady = 20, sticky="nsew")
 
     root.mainloop()
 

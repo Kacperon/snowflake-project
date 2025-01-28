@@ -85,6 +85,7 @@ def animate(segments, ax, canvas, t):
         return lines
 
     def update(frame):
+        
         for idx, line in enumerate(lines[:frame + 1]):
             if idx < len(segments):
                 xdata, ydata = [], []
