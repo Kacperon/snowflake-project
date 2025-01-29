@@ -7,10 +7,12 @@ from random import randint, seed
 from generate import *
 from animate import *
 
-layers = 8
-t = 8
+
 
 def main():
+    layers = 8
+    t = 8
+    
     root = tk.Tk()
     root.title("sniezynka")
     root.configure(bg='#2C2F33')
@@ -85,7 +87,7 @@ def main():
 
     display_button = tk.Button(button_frame, text="Skip", command=handle_display, state = 'disabled', font =['Arial', 35], width=1,
     bg = '#101A2D', fg = '#eeeeee', activebackground = '#152748', activeforeground = '#eeeeee')
-    display_button.grid(row=1, column=2, padx=5, pady=10,  sticky="nsew")
+    display_button.grid(row=1, column=2, padx=5, pady=10, ipadx = 20, ipady = 10,  sticky="nsew")
 
     animate_button = tk.Button(button_frame, text="Animate", command=handle_animate, state = 'disabled', font =['Arial', 35], width=1,
     bg = '#101A2D', fg = '#eeeeee', activebackground = '#152748', activeforeground = '#eeeeee')
@@ -94,7 +96,7 @@ def main():
     generate_button = tk.Button(button_frame, text="Generate", command=handle_generate, font =['Arial', 35], width=1,
     bg = '#101A2D', fg = '#eeeeee', activebackground = '#152748', activeforeground = '#eeeeee')
     generate_button.grid(row=1,  column=0, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="nsew")
-    
+
     root.after(10, schedule_font_adjustment)
     root.mainloop()
 
