@@ -6,12 +6,12 @@ from matplotlib.animation import FuncAnimation
 from random import randint, seed
 from generate import *
 from animate import *
+from main import t, layers
 
 
 
 def main():
-    layers = 8
-    t = 8
+   
     
     root = tk.Tk()
     root.title("sniezynka")

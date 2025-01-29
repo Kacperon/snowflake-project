@@ -1,2 +1,2 @@
 # sniezynka
- berb
+ run main.py to start program
