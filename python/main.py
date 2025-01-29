@@ -1,5 +1,8 @@
 from generate import *
 from animate import *
+from window import *
 
-display(generate(layers=8))
-animate(generate(layers=8))
+layers = 8
+t = 8
+if __name__ == "__main__":
+    main()

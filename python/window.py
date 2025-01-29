@@ -36,7 +36,7 @@ def main():
     def handle_display():
         nonlocal segments
         if segments:
-            display(segments, ax, canvas)
+            display(segments, ax, canvas,t)
         display_button.config(state=tk.DISABLED)
         
 
@@ -51,28 +51,30 @@ def main():
         nonlocal segments
         if layers:
             segments = generate(layers)
-            display(segments, ax, canvas)
+            animate(segments, ax, canvas,t)
         animate_button.config(state=tk.NORMAL)
+        display_button.config(state=tk.NORMAL)
         
 
 
     # Psyciski
-    # def adjust_font_size(button):
+    def adjust_font_size(button):
  
-    #     width = button.winfo_width()
-    #     height = button.winfo_height()
+        width = button.winfo_width()
+        height = button.winfo_height()
 
     
-    #     font_size = min(width, height) // 4
+        font_size = min(width, height) // 4
 
-    #     button.config(font=('Arial', font_size))
+        button.config(font=('Arial', font_size))
 
-    # def schedule_font_adjustment():
+    def schedule_font_adjustment():
        
-    #     adjust_font_size(display_button)
-    #     adjust_font_size(animate_button)
-    #     adjust_font_size(generate_button)
-    #     root.after(100, schedule_font_adjustment)
+        adjust_font_size(display_button)
+        adjust_font_size(animate_button)
+        adjust_font_size(generate_button)
+        root.after(10, schedule_font_adjustment)
+  
         
     button_frame = tk.Frame(root, bg='#2C2F33')
     button_frame.grid(row=1, column=0, sticky="nsew")
@@ -92,9 +94,8 @@ def main():
     generate_button = tk.Button(button_frame, text="Generate", command=handle_generate, font =['Arial', 35], width=1,
     bg = '#101A2D', fg = '#eeeeee', activebackground = '#152748', activeforeground = '#eeeeee')
     generate_button.grid(row=1,  column=0, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="nsew")
-
-    # root.after(100, schedule_font_adjustment)
+    
+    root.after(10, schedule_font_adjustment)
     root.mainloop()
 
-if __name__ == "__main__":
-    main()
+
