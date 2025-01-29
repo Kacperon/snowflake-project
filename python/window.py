@@ -15,7 +15,7 @@ def main():
     root.title("sniezynka")
     root.configure(bg='#2C2F33')
     root.resizable(True, True) 
-    root.rowconfigure(0,weight = 3)
+    root.rowconfigure(0,weight = 9)
     root.rowconfigure(1, weight=1)
     root.columnconfigure(0, weight=1)
 
@@ -57,22 +57,22 @@ def main():
 
 
     # Psyciski
-    def adjust_font_size(button):
+    # def adjust_font_size(button):
  
-        width = button.winfo_width()
-        height = button.winfo_height()
+    #     width = button.winfo_width()
+    #     height = button.winfo_height()
 
     
-        font_size = min(width, height) // 4
+    #     font_size = min(width, height) // 4
 
-        button.config(font=('Arial', font_size))
+    #     button.config(font=('Arial', font_size))
 
-    def schedule_font_adjustment():
+    # def schedule_font_adjustment():
        
-        adjust_font_size(display_button)
-        adjust_font_size(animate_button)
-        adjust_font_size(generate_button)
-        root.after(100, schedule_font_adjustment)
+    #     adjust_font_size(display_button)
+    #     adjust_font_size(animate_button)
+    #     adjust_font_size(generate_button)
+    #     root.after(100, schedule_font_adjustment)
         
     button_frame = tk.Frame(root, bg='#2C2F33')
     button_frame.grid(row=1, column=0, sticky="nsew")
@@ -93,7 +93,7 @@ def main():
     bg = '#101A2D', fg = '#eeeeee', activebackground = '#152748', activeforeground = '#eeeeee')
     generate_button.grid(row=1,  column=0, padx=5, pady=10, ipadx = 20, ipady = 10, sticky="nsew")
 
-    root.after(100, schedule_font_adjustment)
+    # root.after(100, schedule_font_adjustment)
     root.mainloop()
 
 if __name__ == "__main__":
