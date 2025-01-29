@@ -5,8 +5,6 @@ import numpy as np
 import matplotlib.colors as mcolors
 import numpy as np
 
-
-
 # def display(segments, ax, canvas):
 #     ax.clear()
 #     ax.set_facecolor('#2C2F33')
@@ -15,6 +13,7 @@ import numpy as np
 #     ax.axis('square')
 #     ax.axis('off')
 #     canvas.draw()
+
 def display(segments, ax, canvas, t):
     ax.clear()
     ax.set_facecolor('#2C2F33')
